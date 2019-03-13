@@ -6,6 +6,12 @@ Rails.application.routes.draw do
      end
    end
  end
+  
+  get '/login' => 'session#new'
+  get '/logout' => 'session#destroy'
+  post '/login' => 'session#create'
+
+  get '/signup' => 'user#create'
 
   root "todo_lists#index"
 end
